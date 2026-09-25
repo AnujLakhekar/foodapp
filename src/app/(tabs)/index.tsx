@@ -9,8 +9,8 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Fragment } from "react/jsx-runtime";
-import CartButton from "../../components/CartButton";
-import { images, offers } from "../../contants";
+import CartButton from "../../../components/CartButton";
+import { images, offers } from "../../../contants";
 
 export default function Index() {
   return (
@@ -30,9 +30,8 @@ export default function Index() {
                 />
               </TouchableOpacity>
             </View>
-            <Text>
-              <CartButton />
-            </Text>
+
+            <CartButton />
           </View>
         )}
         renderItem={({ item, index }) => {
