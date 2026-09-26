@@ -2,6 +2,7 @@ import * as Sentry from "@sentry/react-native";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from "react";
+import { ActivityIndicator } from "react-native";
 import useAuthStore from "../../store/auth.store";
 import "./global.css";
 
@@ -38,7 +39,13 @@ function RootLayout() {
   }, []);
 
   if (!fontsLoaded || isLoading) {
-    return null;
+    return (
+      <ActivityIndicator
+        size="large"
+        color="#FE8C00"
+        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+      />
+    );
   }
 
   return (
